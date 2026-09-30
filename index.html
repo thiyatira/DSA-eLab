@@ -92,22 +92,38 @@
               <button class="view-btn" data-view="split">Split View</button>
               <button class="view-btn" data-view="question">Problem Only</button>
               <button class="view-btn active" data-view="solution">Solution Only</button>
+              <button class="view-btn" data-view="all" id="onePageViewBtn" title="View all challenges continuously in one scrollable page">📖 One Page View</button>
             </div>
           </div>
 
           <div class="toolbar-right">
-            <button id="copyCodeBtn" class="action-btn primary-btn" title="Copy C Code">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              <span>Copy C Code</span>
-            </button>
-            <button id="prevBtn" class="icon-btn nav-btn" title="Previous (Left Arrow)">◀</button>
-            <button id="nextBtn" class="icon-btn nav-btn" title="Next (Right Arrow)">▶</button>
+            <div class="single-controls" id="singleControls">
+              <button id="copyCodeBtn" class="action-btn primary-btn" title="Copy C Code">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy C Code</span>
+              </button>
+              <button id="prevBtn" class="icon-btn nav-btn" title="Previous (Left Arrow)">◀</button>
+              <button id="nextBtn" class="icon-btn nav-btn" title="Next (Right Arrow)">▶</button>
+            </div>
+            <div class="all-controls" id="allControls" style="display: none;">
+              <button id="toggleAllCardsBtn" class="action-btn secondary-btn" title="Expand or Collapse all challenge cards">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="7 13 12 18 17 13"></polyline>
+                  <polyline points="7 6 12 11 17 6"></polyline>
+                </svg>
+                <span id="toggleAllText">Collapse All</span>
+              </button>
+              <button id="printBtn" class="icon-btn" title="Print or save as PDF">
+                🖨️
+              </button>
+            </div>
           </div>
         </div>
 
+        <!-- Single Challenge Panels -->
         <div class="content-panels" id="contentPanels">
           <!-- Question Panel -->
           <section class="panel question-panel" id="questionPanel">
@@ -132,6 +148,42 @@
             </div>
           </section>
         </div>
+
+        <!-- One Page View Container (Continuous All-in-One Catalog) -->
+        <div class="all-in-one-container" id="allInOneContainer" style="display: none;">
+          <div class="all-feed-hero">
+            <div class="all-hero-text">
+              <div class="all-hero-badge">Comprehensive Study Guide</div>
+              <h2>All-in-One Challenges Portal</h2>
+              <p>Review problem statements, algorithmic breakdowns, and verified C solutions for all challenges on a single continuous page.</p>
+            </div>
+            <div class="all-quick-stats">
+              <div class="stat-pill"><span id="allChallengesCount">40</span> Challenges Available</div>
+              <div class="stat-pill success"><span id="allSolvedCount">40</span> Solved with C Code</div>
+            </div>
+          </div>
+
+          <!-- Quick Jump Topic Navigation -->
+          <div class="topic-jump-bar" id="topicJumpBar">
+            <span class="jump-label">Jump to Topic:</span>
+            <button class="jump-pill" data-jump="topic-sec-searching">🔍 Searching (1-10)</button>
+            <button class="jump-pill" data-jump="topic-sec-sorting">🔀 Sorting (11-20)</button>
+            <button class="jump-pill" data-jump="topic-sec-arrays">📊 Arrays (21-30)</button>
+            <button class="jump-pill" data-jump="topic-sec-linkedlist">🔗 Linked List (31-40)</button>
+          </div>
+
+          <!-- Feed of all challenge cards -->
+          <div class="all-challenges-feed" id="allChallengesFeed">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- Floating Back-to-Top Button -->
+        <button id="backToTopBtn" class="back-to-top-btn" title="Back to Top" style="display: none;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </main>
     </div>
   </div>

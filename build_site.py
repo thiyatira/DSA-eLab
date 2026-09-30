@@ -51,7 +51,7 @@ def build_data():
                     raw_sol = f.read()
                 if len(raw_sol) > 100:
                     has_solution = True
-                    code_match = re.search(r"```c\s*(.*?)\s*```", raw_sol, re.DOTALL)
+                    code_match = re.search(r"```(?:c\+\+|cpp|c)\s*(.*?)\s*```", raw_sol, re.DOTALL)
                     if code_match:
                         c_code = code_match.group(1).strip()
 

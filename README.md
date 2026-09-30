@@ -14,12 +14,12 @@
 - **📐 Mathematical Symbol Rendering**: Full LaTeX math formula typesetting powered by [KaTeX](https://katex.org/) (handles inline `$x$`, `$\le$`, `$i \in [1, P]$`, `$Q_j$`, sets `$\{1, 3, 7\}$`, and display equations `$$\dots$$`).
 - **💻 Verified C Solutions**: Clean C source code matching mandatory keywords, NLOC, cyclomatic complexity limits, and automated grader constraints.
 - **⚡ Interactive Workspace**:
-  - **Triple View Mode**: Split View, Problem Only, or Solution Only.
+  - **Multi-View Modes**: Split View, Problem Only, Solution Only, and a continuous **All-in-One One Page View** with quick topic jumps, instant code copying, and card collapsing.
   - **One-Click Code Copy**: Instantly copy working C code to your clipboard.
-  - **Instant Search & Topic Filter**: Search by problem title, code, keywords, or topics.
+  - **Instant Search & Topic Filter**: Search by problem title, code, keywords, or topics in both single and continuous views.
   - **Keyboard Navigation**: Use `Left Arrow` / `Right Arrow` keys to cycle through challenges.
   - **Dark & Light Mode**: Seamless dark/light theme switching with local preference persistence.
-  - **Mobile Responsive**: Off-canvas navigation drawer for mobile and tablet devices.
+  - **Mobile Responsive & Print Ready**: Off-canvas navigation drawer and print/PDF stylesheet.
 
 ---
 
